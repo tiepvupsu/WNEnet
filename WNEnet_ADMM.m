@@ -49,7 +49,7 @@ function X_admm = WNEnet_ADMM(Y, W, lambda2, Lambda)
 		end 
 		iter = iter + 1;
     end 
-    iter
+%     iter
 	X_admm = Z;
 end 
 

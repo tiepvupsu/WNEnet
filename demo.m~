@@ -20,7 +20,7 @@ function demo
     end 
 
     %% Test 1: fat dictionary, 1000 signal 
-    fprintf('Test 1: fat dictionary, 1000 signals\n');
+    fprintf('Test1: fat dictionary, 1000 signals');
     d = 100;  % signal dimension
 	N = 1000; % number of signals
 	k = 1000; % number of atoms 
@@ -35,11 +35,11 @@ function demo
 	t1 = toc; 
 
     tic 
-    X_fista = WNEnet_FISTA(Y, W, lambda2, Lambda);
-    t2 = toc; 
+    X_fista2 = WNEnet_FISTA2(Y, W, lambda2, Lambda);
+    t3 = toc; 
     
-	fprintf('ADMM  | time: %f | cost: %f\n', t1, calc_cost(X_admm));
-    fprintf('FISTA | time: %f | cost: %f\n', t2, calc_cost(X_fista));
+	fprintf('ADMM   | time: %f | cost: %f\n', t1, calc_cost(X_admm));
+    fprintf('FISTA2 | time: %f | cost: %f\n', t3, calc_cost(X_fista2));
     
     %% Test 2: tall dictionary, 1000 signal 
     fprintf('=====================================\n');
@@ -52,17 +52,16 @@ function demo
 
 	W = normc(rand(d, k));
 	Y = normc(rand(d, N));
-	profile off 
-    profile on 
+	
 	tic;
 	X_admm = WNEnet_ADMM(Y, W, lambda2, Lambda);
 	t1 = toc; 
 
     tic 
-    X_fista = WNEnet_FISTA(Y, W, lambda2, Lambda);
-    t2 = toc; 
-    profile viewer
-	fprintf('ADMM  | time: %f | cost: %f\n', t1, calc_cost(X_admm));
-    fprintf('FISTA | time: %f | cost: %f\n', t2, calc_cost(X_fista));
+    X_fista2 = WNEnet_FISTA2(Y, W, lambda2, Lambda);
+    t3 = toc; 
+    
+	fprintf('ADMM   | time: %f | cost: %f\n', t1, calc_cost(X_admm));
+    fprintf('FISTA2 | time: %f | cost: %f\n', t3, calc_cost(X_fista2));
 
 end 
