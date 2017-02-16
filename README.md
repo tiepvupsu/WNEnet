@@ -7,10 +7,10 @@ X = \arg\min_X 0.5 ||Y - WX||_F^2 + ||Gamma*X||_1 + 0.5*lambda ||X||_2^2
 ```
 
 Solvers: 
-1. ADMM 
 
-2. FISTA 
+**1. ADMM**
 
+**2. FISTA** 
 A. Beck and M. Teboulle,  "A fast iterative shrinkage-thresholding algorithm for linear inverse problems", *SIAM Journal on Imaging Sciences*,
 vol. 2, no. 1, pp. 183–202, 2009. [View the paper](http://people.rennes.inria.fr/Cedric.Herzet/Cedric.Herzet/Sparse_Seminar/Entrees/2012/11/12_A_Fast_Iterative_Shrinkage-Thresholding_Algorithmfor_Linear_Inverse_Problems_(A._Beck,_M._Teboulle)_files/Breck_2009.pdf).
 
