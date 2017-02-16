@@ -30,4 +30,4 @@ ADMM  | time: 3.276344 | cost: 130.370372
 FISTA | time: 2.204574 | cost: 129.481144
 ```
 
-In both cases: fat and tall dictionaris, FISTA performs better in terms of both cost and running time. 
+In both cases: fat and tall dictionaris, **FISTA performs better than ADMM in terms of both cost and running time.**
